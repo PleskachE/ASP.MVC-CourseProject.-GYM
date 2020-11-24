@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[TrainingGym]
+(
+	[Id] INT NOT NULL IDENTITY(1,1),
+	[Name] NVARCHAR(50) NOT NULL,
+	[Description] NVARCHAR(500) NOT NULL,
+	CONSTRAINT PK_TrainingGym PRIMARY KEY ([Id])
+)

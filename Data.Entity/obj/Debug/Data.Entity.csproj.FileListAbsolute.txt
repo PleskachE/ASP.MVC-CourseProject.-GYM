@@ -1,0 +1,9 @@
+C:\Users\Sony\source\repos\CourseProject. GYM\Data.Entity\bin\Debug\Data.Entity.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Data.Entity\bin\Debug\Data.Entity.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Data.Entity\bin\Debug\Base.Abstractions.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Data.Entity\bin\Debug\Base.Abstractions.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Data.Entity\obj\Debug\Data.Entity.csprojAssemblyReference.cache
+C:\Users\Sony\source\repos\CourseProject. GYM\Data.Entity\obj\Debug\Data.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Sony\source\repos\CourseProject. GYM\Data.Entity\obj\Debug\Data.Entity.csproj.CopyComplete
+C:\Users\Sony\source\repos\CourseProject. GYM\Data.Entity\obj\Debug\Data.Entity.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Data.Entity\obj\Debug\Data.Entity.pdb

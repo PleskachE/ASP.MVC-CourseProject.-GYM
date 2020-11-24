@@ -1,0 +1,15 @@
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Service.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Service.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Base.Abstractions.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Data.Abstractions.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Data.Entity.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Service.Abstraction.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Base.Abstractions.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Data.Abstractions.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Data.Entity.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\bin\Debug\Service.Abstraction.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\obj\Debug\Service.csprojAssemblyReference.cache
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\obj\Debug\Service.csproj.CopyComplete
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\obj\Debug\Service.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service\obj\Debug\Service.pdb

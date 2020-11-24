@@ -1,0 +1,11 @@
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\bin\Debug\Service.Abstraction.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\bin\Debug\Service.Abstraction.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\bin\Debug\Data.Entity.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\bin\Debug\Base.Abstractions.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\bin\Debug\Data.Entity.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\bin\Debug\Base.Abstractions.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\obj\Debug\Service.Abstraction.csprojAssemblyReference.cache
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\obj\Debug\Service.Abstraction.csproj.CoreCompileInputs.cache
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\obj\Debug\Service.Abstraction.csproj.CopyComplete
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\obj\Debug\Service.Abstraction.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\Service.Abstraction\obj\Debug\Service.Abstraction.pdb
