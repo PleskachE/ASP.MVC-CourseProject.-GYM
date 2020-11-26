@@ -1,10 +1,7 @@
-﻿using Data.Abstractions.Repositories;
-using Service;
-using Service.Abstraction;
+﻿using CourseProject.GYM.Models;
+
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Security;
 
 namespace CourseProject.GYM.Providers
@@ -41,13 +38,10 @@ namespace CourseProject.GYM.Providers
         public override string[] GetRolesForUser(string username)
         {
             string[] roles = new string[] { };
-            using (IRolesRepository rolesService = new RolesRepository())
+            var user = UsersAndRolesRepository.UserService.GetUsers().FirstOrDefault(x => x.Login == username);
+            if(user != null)
             {
-                foreach (var item in rolesService.GetAll())
-                {
-                    if (item != null)
-                        roles.Append(item.Name);
-                }
+                roles.Append(UsersAndRolesRepository.RolesService.GetById(user.RolesId).Name);
             }
             return roles;
         }
@@ -59,7 +53,19 @@ namespace CourseProject.GYM.Providers
 
         public override bool IsUserInRole(string username, string roleName)
         {
-            throw new NotImplementedException();
+            bool outputResult = false;
+
+            var user = UsersAndRolesRepository.UserService.GetUsers().FirstOrDefault(x => x.Login == username);
+            if (user != null)
+            {
+                var role = UsersAndRolesRepository.RolesService.GetById(user.RolesId);
+                if(role != null)
+                {
+                    outputResult = true;
+                }
+            }
+
+            return outputResult;
         }
 
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)

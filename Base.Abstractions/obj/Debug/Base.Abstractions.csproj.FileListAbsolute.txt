@@ -3,3 +3,4 @@ C:\Users\Sony\source\repos\CourseProject. GYM\Base.Abstractions\bin\Debug\Base.A
 C:\Users\Sony\source\repos\CourseProject. GYM\Base.Abstractions\obj\Debug\Base.Abstractions.csproj.CoreCompileInputs.cache
 C:\Users\Sony\source\repos\CourseProject. GYM\Base.Abstractions\obj\Debug\Base.Abstractions.dll
 C:\Users\Sony\source\repos\CourseProject. GYM\Base.Abstractions\obj\Debug\Base.Abstractions.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\Base.Abstractions\obj\Debug\Base.Abstractions.csprojAssemblyReference.cache

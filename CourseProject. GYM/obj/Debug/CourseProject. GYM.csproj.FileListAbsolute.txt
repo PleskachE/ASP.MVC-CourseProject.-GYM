@@ -109,3 +109,5 @@ C:\Users\Sony\source\repos\CourseProject. GYM\CourseProject. GYM\obj\Debug\Cours
 C:\Users\Sony\source\repos\CourseProject. GYM\CourseProject. GYM\obj\Debug\CourseProject. GYM.csproj.CopyComplete
 C:\Users\Sony\source\repos\CourseProject. GYM\CourseProject. GYM\obj\Debug\CourseProject.GYM.dll
 C:\Users\Sony\source\repos\CourseProject. GYM\CourseProject. GYM\obj\Debug\CourseProject.GYM.pdb
+C:\Users\Sony\source\repos\CourseProject. GYM\CourseProject. GYM\bin\System.Web.Providers.dll
+C:\Users\Sony\source\repos\CourseProject. GYM\CourseProject. GYM\bin\System.Web.Providers.xml

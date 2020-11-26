@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Service.Abstraction
 {
-    public interface RolesRepository
+    public interface IRolesService
     {
         void Add(Roles roles);
 

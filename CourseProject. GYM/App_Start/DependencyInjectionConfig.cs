@@ -51,7 +51,7 @@ namespace CourseProject.GYM.App_Start
                     .To<UserService>()
                     .InRequestScope();
 
-                Bind<RolesRepository>()
+                Bind<IRolesService>()
                     .To<RolesService>()
                     .InRequestScope();
 
@@ -73,10 +73,6 @@ namespace CourseProject.GYM.App_Start
 
                 Bind<ITypeGymTrainingService>()
                     .To<TypeGymTrainingService>()
-                    .InRequestScope();
-
-                Bind<IWorkerService>()
-                    .To<WorkerService>()
                     .InRequestScope();
 
                 Bind<IWorkSpecializationsService>()

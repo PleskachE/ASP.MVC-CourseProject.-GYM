@@ -1,11 +1,10 @@
-﻿using Base.Abstractions;
-using CourseProject.GYM.Models;
+﻿using CourseProject.GYM.Models;
+
 using Data.Entity;
+
 using Service.Abstraction;
-using System;
-using System.Collections.Generic;
+
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -13,18 +12,17 @@ namespace CourseProject.GYM.Controllers
 {
     public class AccountController : Controller
     {
-        private ListUsersModel _listUsersModel;
+        private const int _roleIdDefault = 1;
 
-        private IWorkerService _workerService;
-        private IUserService _clientService;
+        private IUserService _userService;
+        private IRolesService _rolesService;
 
-        public AccountController(IWorkerService workerService, IUserService clientService,
-            RolesRepository rolesService)
+        public AccountController(IUserService userService)
         {
-            this._workerService = workerService;
-            this._clientService = clientService;
+            this._userService = userService;
 
-            _listUsersModel = new ListUsersModel(_workerService, _clientService);
+            UsersAndRolesRepository.UserService = _userService;
+            UsersAndRolesRepository.RolesService = _rolesService;
         }
 
         [HttpGet]
@@ -37,11 +35,10 @@ namespace CourseProject.GYM.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model)
         {
-            BaseUser resUser = null;
             if (ModelState.IsValid)
             {
-                resUser = _listUsersModel.Users.FirstOrDefault(x => x.Login == model.Login && x.Password == model.Password);
-                if (resUser != null)
+                var user = _userService.GetUsers().FirstOrDefault(x => x.Login == model.Login && x.Password == model.Password);
+                if (user != null)
                 {
                     FormsAuthentication.SetAuthCookie(model.Login, true);
                     return RedirectToAction("Index", "Home");
@@ -62,16 +59,14 @@ namespace CourseProject.GYM.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(UserModel model)
         {
-            BaseUser resUser = null;
-
             if (ModelState.IsValid)
             {
-                resUser = _listUsersModel.Users.FirstOrDefault(x => x.Login == model.Login);
-                if (resUser == null)
+                var user = _userService.GetUsers().FirstOrDefault(x => x.Login == model.Login);
+                if (user == null)
                 {
-                    var newUser = new UserModel()
+                    var newUser = new User()
                     {
                         FirstName = model.FirstName,
                         LastName = model.LastName,
@@ -79,15 +74,16 @@ namespace CourseProject.GYM.Controllers
                         Emeil = model.Emeil,
                         ContactPhoneNumber = model.ContactPhoneNumber,
                         Login = model.Login,
-                        Password = model.Password
+                        Password = model.Password,
+                        RolesId = _roleIdDefault
                     };
-                    _workerService.Add(newUser);
+                    _userService.Add(newUser);
 
-                    resUser = _workerService.GetWorker().FirstOrDefault(x => x.Login == model.Login);
-                    if (resUser != null)
+                    user = _userService.GetUsers().FirstOrDefault(x => x.Login == model.Login);
+                    if (user != null)
                     {
                         FormsAuthentication.SetAuthCookie(model.Login, true);
-                        return RedirectToAction("Index", "Home", resUser);
+                        return RedirectToAction("Index", "Home", user);
                     }
                 }
                 else

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Service
 {
-    public class RolesService : RolesRepository
+    public class RolesService : IRolesService
     {
         private readonly IDataUnitOfWork _uow;
 
