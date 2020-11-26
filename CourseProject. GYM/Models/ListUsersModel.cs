@@ -10,7 +10,7 @@ namespace CourseProject.GYM.Models
     {
         public IEnumerable<BaseUser> Users { get; set; }
 
-        public ListUsersModel(IWorkerService workerService, IClientService clientService)
+        public ListUsersModel(IWorkerService workerService, IUserService clientService)
         {
             Users.ToList().AddRange(workerService.GetWorker());
             Users.ToList().AddRange(clientService.GetClients());

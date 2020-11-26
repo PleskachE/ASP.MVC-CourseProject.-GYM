@@ -16,9 +16,9 @@ namespace CourseProject.GYM.Controllers
         private ListUsersModel _listUsersModel;
 
         private IWorkerService _workerService;
-        private IClientService _clientService;
+        private IUserService _clientService;
 
-        public AccountController(IWorkerService workerService, IClientService clientService,
+        public AccountController(IWorkerService workerService, IUserService clientService,
             RolesRepository rolesService)
         {
             this._workerService = workerService;

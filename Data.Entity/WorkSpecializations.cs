@@ -4,7 +4,7 @@ namespace Data.Entity
 {
     public class WorkSpecializations : BaseEntity
     {
-        public int WorkerId { get; set; }
+        public int UserId { get; set; }
         public int TrainingSpecializationId { get; set; }
     }
 }

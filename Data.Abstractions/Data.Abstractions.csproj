@@ -43,14 +43,13 @@
   <ItemGroup>
     <Compile Include="IDataUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IClientRepository.cs" />
     <Compile Include="Repositories\IRolesRepository.cs" />
     <Compile Include="Repositories\ITrainingGymRepository.cs" />
     <Compile Include="Repositories\ITrainingRepository.cs" />
     <Compile Include="Repositories\ITrainingSessionsRepository.cs" />
     <Compile Include="Repositories\ITrainingSpecializationRepository.cs" />
     <Compile Include="Repositories\ITypeGymTrainingRepository.cs" />
-    <Compile Include="Repositories\IWorkerRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\IWorkSpecializationsRepository.cs" />
   </ItemGroup>
   <ItemGroup>

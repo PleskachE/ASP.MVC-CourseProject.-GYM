@@ -3,8 +3,7 @@ using Data.Entity;
 
 namespace Data.Abstractions.Repositories
 {
-    public interface IClientRepository : IRepository<Client>
+    public interface IUserRepository : IRepository<User>
     {
-        void Create(Client client);
     }
 }

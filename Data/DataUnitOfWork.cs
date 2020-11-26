@@ -8,14 +8,13 @@ namespace Data
     {
         private readonly DataDbContext _context;
 
-        private IClientRepository _clientRepository;
+        private IUserRepository _userRepository;
         private IRolesRepository _rolesRepository;
         private ITrainingGymRepository _trainingGymRepository;
         private ITrainingRepository _trainingRepository;
         private ITrainingSessionsRepository _trainingSessionsRepository;
         private ITrainingSpecializationRepository _trainingSpecializationRepository;
         private ITypeGymTrainingRepository _typeGymTrainingRepository;
-        private IWorkerRepository _workerRepository;
         private IWorkSpecializationsRepository _workSpecializationsRepository;
 
         public DataUnitOfWork(string connectionString)
@@ -23,16 +22,16 @@ namespace Data
             _context = new DataDbContext(connectionString);
         }
 
-        public IClientRepository ClientRepository
+        public IUserRepository UserRepository
         {
             get
             {
-                if (_clientRepository == null)
+                if (_userRepository == null)
                 {
-                    _clientRepository = new ClientRepository(_context);
+                    _userRepository = new UserRepository(_context);
                 }
 
-                return _clientRepository;
+                return _userRepository;
             }
         }
 
@@ -111,19 +110,6 @@ namespace Data
                 }
 
                 return _typeGymTrainingRepository;
-            }
-        }
-
-        public IWorkerRepository WorkerRepository
-        {
-            get
-            {
-                if (_workerRepository == null)
-                {
-                    _workerRepository = new WorkerRepository(_context);
-                }
-
-                return _workerRepository;
             }
         }
 

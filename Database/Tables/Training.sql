@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[Training]
 (
 	[Id] INT NOT NULL IDENTITY(1,1),
-	[TrainingGymId] INT NOT NULL,
-	[WorkerId] INT NOT NULL,
-	[TrainingSpecializationId] INT NOT NULL,
-	[StartTime] DATETIME NOT NULL,
-	[EndTime] DATETIME NOT NULL,
+	[TrainingGymId] INT,
+	[UserId] INT,
+	[TrainingSpecializationId] INT,
+	[StartTime] DATETIME,
+	[EndTime] DATETIME,
 	CONSTRAINT PK_Training PRIMARY KEY ([Id])
 )

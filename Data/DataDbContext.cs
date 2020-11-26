@@ -16,8 +16,7 @@ namespace Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Client>().ToTable(nameof(Client));
-            modelBuilder.Entity<Worker>().ToTable(nameof(Worker));
+            modelBuilder.Entity<User>().ToTable(nameof(User));
             modelBuilder.Entity<WorkSpecializations>().ToTable(nameof(WorkSpecializations));
             modelBuilder.Entity<TypeGymTraining>().ToTable(nameof(TypeGymTraining));
             modelBuilder.Entity<TrainingSpecialization>().ToTable(nameof(TrainingSpecialization));

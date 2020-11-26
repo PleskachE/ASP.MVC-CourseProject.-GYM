@@ -41,14 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IClientService.cs" />
+    <Compile Include="IUserService.cs" />
     <Compile Include="IRolesService.cs" />
     <Compile Include="ITrainingGymService.cs" />
     <Compile Include="ITrainingService.cs" />
     <Compile Include="ITrainingSessionsService.cs" />
     <Compile Include="ITrainingSpecializationService.cs" />
     <Compile Include="ITypeGymTrainingService.cs" />
-    <Compile Include="IWorkerService.cs" />
     <Compile Include="IWorkSpecializationsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

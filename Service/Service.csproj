@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientService.cs" />
+    <Compile Include="UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolesService.cs" />
     <Compile Include="TrainingGymService.cs" />
@@ -49,7 +49,6 @@
     <Compile Include="TrainingSessionsService.cs" />
     <Compile Include="TrainingSpecializationService.cs" />
     <Compile Include="TypeGymTrainingService.cs" />
-    <Compile Include="WorkerService.cs" />
     <Compile Include="WorkSpecializationsService.cs" />
   </ItemGroup>
   <ItemGroup>

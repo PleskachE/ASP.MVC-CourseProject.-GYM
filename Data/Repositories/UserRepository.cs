@@ -5,9 +5,9 @@ using System.Data.Entity;
 
 namespace Data.Repositories
 {
-    internal class ClientRepository : Repository<Client>, IClientRepository
+    internal class UserRepository : Repository<User>, IUserRepository
     {
-        public ClientRepository(DbContext context) : base(context)
+        public UserRepository(DbContext context) : base(context)
         {
 
         }

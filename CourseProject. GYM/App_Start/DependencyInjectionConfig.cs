@@ -47,8 +47,8 @@ namespace CourseProject.GYM.App_Start
                     .InRequestScope()
                     .WithConstructorArgument("connectionString", GetDefaultConnection());
 
-                Bind<IClientService>()
-                    .To<ClientService>()
+                Bind<IUserService>()
+                    .To<UserService>()
                     .InRequestScope();
 
                 Bind<RolesRepository>()

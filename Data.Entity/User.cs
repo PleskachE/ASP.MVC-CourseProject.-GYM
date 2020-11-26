@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Base.Abstractions;
 
-namespace Base.Abstractions
+using System;
+
+namespace Data.Entity
 {
-    public abstract class BaseUser : BaseEntity
+    public class User : BaseEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
