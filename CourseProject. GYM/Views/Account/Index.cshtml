@@ -1,0 +1,36 @@
+﻿@using CourseProject.GYM.Models
+
+@model UserModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <p>@Model.FirstName @Model.LastName </p>
+    @if (Model.RoleId == 3)
+    {
+        <a href="Admin/CreateTraining" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Добавить новую тренировку</a>
+        <a href="Admin/CreateUser" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Зарегистрировать нового пользователя</a>
+        <a href="Admin/RedactorUsers" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Редактировать базу пользователей</a>
+    }
+    <hr />
+    <a href="Client/MySchedule" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Посмотреть моё расписание</a>
+    <a href="Client/Update" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Редактировать мой профиль</a>
+    <a href="Account/Logout" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Разлогиниться</a>
+    <hr />
+    @if (Model.RoleId == 2)
+    {
+        <a href="Тrainer/MyWork" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Посмотреть моё РАБОЧЕЕ расписание</a>
+    }
+</body>
+</html>
+

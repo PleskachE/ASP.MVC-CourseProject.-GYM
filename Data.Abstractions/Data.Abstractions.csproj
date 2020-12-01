@@ -43,14 +43,14 @@
   <ItemGroup>
     <Compile Include="IDataUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IRolesRepository.cs" />
-    <Compile Include="Repositories\ITrainingGymRepository.cs" />
+    <Compile Include="Repositories\IRoleRepository.cs" />
+    <Compile Include="Repositories\IHallRepository.cs" />
     <Compile Include="Repositories\ITrainingRepository.cs" />
-    <Compile Include="Repositories\ITrainingSessionsRepository.cs" />
-    <Compile Include="Repositories\ITrainingSpecializationRepository.cs" />
-    <Compile Include="Repositories\ITypeGymTrainingRepository.cs" />
+    <Compile Include="Repositories\ISessionRepository.cs" />
+    <Compile Include="Repositories\ISpecializationRepository.cs" />
+    <Compile Include="Repositories\IHallSpecializationRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
-    <Compile Include="Repositories\IWorkSpecializationsRepository.cs" />
+    <Compile Include="Repositories\IWorkSpecializationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base.Abstractions\Base.Abstractions.csproj">

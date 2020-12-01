@@ -1,0 +1,69 @@
+﻿@using CourseProject.GYM.Models
+
+@model UserModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        <h3>Форма изменения аккаунта</h3>
+        @using (Html.BeginForm("Update", "Client", FormMethod.Post))
+        {
+    <fieldset>
+        <p>
+            @Html.HiddenFor(m => m.RoleId)
+        </p>
+        <p>
+            @Html.HiddenFor(m => m.Birthdate)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.FirstName, "Имя")
+            <br />
+            @Html.EditorFor(m => m.FirstName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.LastName, "Фамилия")
+            <br />
+            @Html.EditorFor(m => m.LastName)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ContactPhoneNumber, "Номер телефона")
+            <br />
+            @Html.EditorFor(m => m.ContactPhoneNumber)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Emeil, "Email")
+            <br />
+            @Html.EditorFor(m => m.Emeil)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Login, "Логин")
+            <br />
+            @Html.EditorFor(m => m.Login)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Password, "Password")
+            <br />
+            @Html.EditorFor(m => m.Password)
+
+        </p>
+        <p><input type="submit" value="Изменить" /></p>
+    </fieldset>
+        }
+    </div>
+</body>
+</html>
+

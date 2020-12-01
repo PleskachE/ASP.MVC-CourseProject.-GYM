@@ -6,12 +6,12 @@ namespace Data.Abstractions
     public interface IDataUnitOfWork : IUnitOfWork
     {
         IUserRepository UserRepository { get; }
-        IRolesRepository RolesRepository { get; }
-        ITrainingGymRepository TrainingGymRepository { get; }
+        IRoleRepository RoleRepository { get; }
+        IHallRepository HallRepository { get; }
         ITrainingRepository TrainingRepository { get; }
-        ITrainingSessionsRepository TrainingSessionsRepository { get; }
-        ITrainingSpecializationRepository TrainingSpecializationRepository { get; }
-        ITypeGymTrainingRepository TypeGymTrainingRepository { get; }
-        IWorkSpecializationsRepository WorkSpecializationsRepository { get; }
+        ISessionRepository SessionRepository { get; }
+        ISpecializationRepository SpecializationRepository { get; }
+        IHallSpecializationRepository HallSpecializationRepository { get; }
+        IWorkSpecializationRepository WorkSpecializationsRepository { get; }
     }
 }

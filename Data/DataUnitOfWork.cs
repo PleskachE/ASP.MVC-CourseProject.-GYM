@@ -9,13 +9,13 @@ namespace Data
         private readonly DataDbContext _context;
 
         private IUserRepository _userRepository;
-        private IRolesRepository _rolesRepository;
-        private ITrainingGymRepository _trainingGymRepository;
+        private IRoleRepository _roleRepository;
+        private IHallRepository _hallRepository;
         private ITrainingRepository _trainingRepository;
-        private ITrainingSessionsRepository _trainingSessionsRepository;
-        private ITrainingSpecializationRepository _trainingSpecializationRepository;
-        private ITypeGymTrainingRepository _typeGymTrainingRepository;
-        private IWorkSpecializationsRepository _workSpecializationsRepository;
+        private ISessionRepository _sessionRepository;
+        private ISpecializationRepository _specializationRepository;
+        private IHallSpecializationRepository _hallSpecializationRepository;
+        private IWorkSpecializationRepository _workSpecializationRepository;
 
         public DataUnitOfWork(string connectionString)
         {
@@ -35,29 +35,29 @@ namespace Data
             }
         }
 
-        public IRolesRepository RolesRepository
+        public IRoleRepository RoleRepository
         {
             get
             {
-                if (_rolesRepository == null)
+                if (_roleRepository == null)
                 {
-                    _rolesRepository = new RolesRepository(_context);
+                    _roleRepository = new RoleRepository(_context);
                 }
 
-                return _rolesRepository;
+                return _roleRepository;
             }
         }
 
-        public ITrainingGymRepository TrainingGymRepository
+        public IHallRepository HallRepository
         {
             get
             {
-                if (_trainingGymRepository == null)
+                if (_hallRepository == null)
                 {
-                    _trainingGymRepository = new TrainingGymRepository(_context);
+                    _hallRepository = new HallRepository(_context);
                 }
 
-                return _trainingGymRepository;
+                return _hallRepository;
             }
         }
 
@@ -74,55 +74,55 @@ namespace Data
             }
         }
 
-        public ITrainingSessionsRepository TrainingSessionsRepository
+        public ISessionRepository SessionRepository
         {
             get
             {
-                if (_trainingSessionsRepository == null)
+                if (_sessionRepository == null)
                 {
-                    _trainingSessionsRepository = new TrainingSessionsRepository(_context);
+                    _sessionRepository = new SessionRepository(_context);
                 }
 
-                return _trainingSessionsRepository;
+                return _sessionRepository;
             }
         }
 
-        public ITrainingSpecializationRepository TrainingSpecializationRepository
+        public ISpecializationRepository SpecializationRepository
         {
             get
             {
-                if (_trainingSpecializationRepository == null)
+                if (_specializationRepository == null)
                 {
-                    _trainingSpecializationRepository = new TrainingSpecializationRepository(_context);
+                    _specializationRepository = new SpecializationRepository(_context);
                 }
 
-                return _trainingSpecializationRepository;
+                return _specializationRepository;
             }
         }
 
-        public ITypeGymTrainingRepository TypeGymTrainingRepository
+        public IHallSpecializationRepository HallSpecializationRepository
         {
             get
             {
-                if (_typeGymTrainingRepository == null)
+                if (_hallSpecializationRepository == null)
                 {
-                    _typeGymTrainingRepository = new TypeGymTrainingRepository(_context);
+                    _hallSpecializationRepository = new HallSpecializationRepository(_context);
                 }
 
-                return _typeGymTrainingRepository;
+                return _hallSpecializationRepository;
             }
         }
 
-        public IWorkSpecializationsRepository WorkSpecializationsRepository
+        public IWorkSpecializationRepository WorkSpecializationsRepository
         {
             get
             {
-                if (_workSpecializationsRepository == null)
+                if (_workSpecializationRepository == null)
                 {
-                    _workSpecializationsRepository = new WorkSpecializationsRepository(_context);
+                    _workSpecializationRepository = new WorkSpecializationRepository(_context);
                 }
 
-                return _workSpecializationsRepository;
+                return _workSpecializationRepository;
             }
         }
 

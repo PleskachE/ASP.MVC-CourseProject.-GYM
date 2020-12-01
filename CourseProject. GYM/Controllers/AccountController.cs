@@ -15,15 +15,36 @@ namespace CourseProject.GYM.Controllers
         private const int _roleIdDefault = 1;
 
         private IUserService _userService;
-        private IRolesService _rolesService;
+        private IRoleService _roleService;
 
-        public AccountController(IUserService userService)
+        public AccountController(IUserService userService, IRoleService roleService)
         {
             this._userService = userService;
+            this._roleService = roleService;
 
             UsersAndRolesRepository.UserService = _userService;
-            UsersAndRolesRepository.RolesService = _rolesService;
+            UsersAndRolesRepository.RoleService = _roleService;
         }
+
+        [HttpGet]
+        [Authorize]
+        public ActionResult Index()
+        {
+            var tempUser = _userService.GetUsers().ToList().Find(x => x.Login == AuthorizedUser.Login);
+            var model = new UserModel()
+            {
+                FirstName = tempUser.FirstName,
+                LastName = tempUser.LastName,
+                Birthdate = tempUser.Birthdate,
+                ContactPhoneNumber = tempUser.ContactPhoneNumber,
+                Emeil = tempUser.Emeil,
+                Login = tempUser.Login,
+                Password = tempUser.Password,
+                RoleId = tempUser.RoleId
+            };
+            return View(model);
+        }
+
 
         [HttpGet]
         public ActionResult Login()
@@ -40,6 +61,8 @@ namespace CourseProject.GYM.Controllers
                 var user = _userService.GetUsers().FirstOrDefault(x => x.Login == model.Login && x.Password == model.Password);
                 if (user != null)
                 {
+                    AuthorizedUser.Id = user.Id;
+                    AuthorizedUser.Login = user.Login;
                     FormsAuthentication.SetAuthCookie(model.Login, true);
                     return RedirectToAction("Index", "Home");
                 }
@@ -75,13 +98,15 @@ namespace CourseProject.GYM.Controllers
                         ContactPhoneNumber = model.ContactPhoneNumber,
                         Login = model.Login,
                         Password = model.Password,
-                        RolesId = _roleIdDefault
+                        RoleId = _roleIdDefault
                     };
                     _userService.Add(newUser);
 
                     user = _userService.GetUsers().FirstOrDefault(x => x.Login == model.Login);
                     if (user != null)
                     {
+                        AuthorizedUser.Id = user.Id;
+                        AuthorizedUser.Login = user.Login;
                         FormsAuthentication.SetAuthCookie(model.Login, true);
                         return RedirectToAction("Index", "Home", user);
                     }
@@ -94,6 +119,11 @@ namespace CourseProject.GYM.Controllers
             return View(model);
         }
 
-
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();           
+            return Redirect("/Home/Index");
+        }
     }
 }

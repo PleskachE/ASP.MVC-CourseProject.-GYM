@@ -1,5 +1,4 @@
-﻿
-namespace CourseProject.GYM.Models
+﻿namespace CourseProject.GYM.Models
 {
     public class LoginModel
     {

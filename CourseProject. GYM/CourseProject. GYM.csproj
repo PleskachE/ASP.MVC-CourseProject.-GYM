@@ -143,11 +143,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ТrainerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RedactorUsersModel.cs" />
+    <Compile Include="Models\ScheduleModel.cs" />
+    <Compile Include="Models\HallsAndSpecializationModel.cs" />
+    <Compile Include="Models\AuthorizedUser.cs" />
+    <Compile Include="Models\UserAndRolesModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UsersAndRolesRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,9 +197,21 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Result.cshtml" />
+    <Content Include="Views\Client\SignUpTrainingSession.cshtml" />
+    <Content Include="Views\Client\Update.cshtml" />
+    <Content Include="Views\Client\MySchedule.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Admin\RedactorUsers.cshtml" />
+    <Content Include="Views\Admin\UpdateUser.cshtml" />
+    <Content Include="Views\Admin\CreateUser.cshtml" />
+    <Content Include="Views\Тrainer\MyWork.cshtml" />
+    <Content Include="Views\Тrainer\Users.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

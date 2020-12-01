@@ -1,0 +1,75 @@
+﻿@using CourseProject.GYM.Models
+
+@model UserAndRolesModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        <h3>Форма изменения пользователя</h3>
+        @using (Html.BeginForm("UpdateUser", "Admin", FormMethod.Post))
+        {
+    <fieldset>
+        <p>
+            @Html.HiddenFor(m => m.User.Id)
+        </p>
+        <p>
+            @Html.HiddenFor(m => m.User.Birthdate)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.User.FirstName, "Имя")
+            <br />
+            @Html.EditorFor(m => m.User.FirstName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.User.LastName, "Фамилия")
+            <br />
+            @Html.EditorFor(m => m.User.LastName)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.User.ContactPhoneNumber, "Телефон")
+            <br />
+            @Html.EditorFor(m => m.User.ContactPhoneNumber)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.User.Emeil, "Почта")
+            <br />
+            @Html.EditorFor(m => m.User.Emeil)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.User.Login, "Логин")
+            <br />
+            @Html.EditorFor(m => m.User.Login)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.User.Password, "Пароль")
+            <br />
+            @Html.EditorFor(m => m.User.Password)
+
+        </p>
+        <p>
+            @Html.LabelFor(m => m.User.RoleId, "Роль")
+            <br />
+            @Html.DropDownListFor(m => m.User.RoleId, Model.RoleService as SelectList)
+        </p>
+        <p><input type="submit" value="Изменить" /></p>
+    </fieldset>
+        }
+    </div>
+</body>
+</html>
+

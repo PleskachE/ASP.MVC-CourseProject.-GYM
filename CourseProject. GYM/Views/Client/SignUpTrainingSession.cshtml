@@ -1,0 +1,33 @@
+﻿@using CourseProject.GYM.Models
+
+@model ScheduleModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="card text-center">
+        <div class="card-header">
+            Подтвердите запись!
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@Model.TrainingName</h5>
+            <p class="card-text">@Model.NameHall</p>
+            <p class="card-text">@Model.NameCoach</p>
+            <p class="card-text">Дата и время начала занятия : @Model.StartTime</p>
+            <p class="card-text">Дата и время окончания занятия : @Model.EndTime</p>
+            <a href="/Client/Result/@Model.Id" class="btn btn-primary">Записаться</a>
+        </div>
+    </div>
+</body>
+</html>
+

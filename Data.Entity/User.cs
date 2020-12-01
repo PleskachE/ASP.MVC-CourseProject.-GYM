@@ -13,6 +13,7 @@ namespace Data.Entity
         public string Emeil { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public int RolesId { get; set; }
+        public int RoleId { get; set; }
+        public Role Role { get; set; }
     }
 }

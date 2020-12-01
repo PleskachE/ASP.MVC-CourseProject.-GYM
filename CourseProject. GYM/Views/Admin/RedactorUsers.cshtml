@@ -1,0 +1,49 @@
+﻿@using CourseProject.GYM.Models
+
+@model RedactorUsersModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Имя</th>
+                <th scope="col">Фамилия</th>
+                <th scope="col">День рождения</th>
+                <th scope="col">Роль</th>
+                <th scope="col">Почта</th>
+                <th scope="col">Телефон</th>
+                <th scope="col">Редактировать</th>
+                <th scope="col">Удалить</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.UserService.GetUsers())
+            {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Birthdate</td>
+                <td>@Model.RoleService.GetById(item.RoleId).Name</td>
+                <td>@item.Emeil</td>
+                <td>@item.ContactPhoneNumber</td>
+                <td><a href="/Admin/UpdateUser/@item.Id">Редактировать</a></td>
+                <td><a href="/Admin/DeleteUser/@item.Id">Удалить</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+

@@ -59,13 +59,13 @@
     <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Roles.sql" />
+    <Build Include="Tables\Role.sql" />
     <Build Include="Tables\Training.sql" />
-    <Build Include="Tables\TrainingGym.sql" />
-    <Build Include="Tables\TrainingSessions.sql" />
-    <Build Include="Tables\TrainingSpecialization.sql" />
-    <Build Include="Tables\TypeGymTraining.sql" />
-    <Build Include="Tables\WorkSpecializations.sql" />
+    <Build Include="Tables\Hall.sql" />
+    <Build Include="Tables\Session.sql" />
+    <Build Include="Tables\Specialization.sql" />
+    <Build Include="Tables\HallSpecialization.sql" />
+    <Build Include="Tables\WorkSpecialization.sql" />
     <Build Include="Tables\User.sql" />
   </ItemGroup>
 </Project>

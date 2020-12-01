@@ -17,13 +17,13 @@ namespace Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>().ToTable(nameof(User));
-            modelBuilder.Entity<WorkSpecializations>().ToTable(nameof(WorkSpecializations));
-            modelBuilder.Entity<TypeGymTraining>().ToTable(nameof(TypeGymTraining));
-            modelBuilder.Entity<TrainingSpecialization>().ToTable(nameof(TrainingSpecialization));
-            modelBuilder.Entity<TrainingSessions>().ToTable(nameof(TrainingSessions));
-            modelBuilder.Entity<TrainingGym>().ToTable(nameof(TrainingGym));
+            modelBuilder.Entity<WorkSpecialization>().ToTable(nameof(WorkSpecialization));
+            modelBuilder.Entity<HallSpecialization>().ToTable(nameof(HallSpecialization));
+            modelBuilder.Entity<Specialization>().ToTable(nameof(Specialization));
+            modelBuilder.Entity<Session>().ToTable(nameof(Session));
+            modelBuilder.Entity<Hall>().ToTable(nameof(Hall));
             modelBuilder.Entity<Training>().ToTable(nameof(Training));
-            modelBuilder.Entity<Roles>().ToTable(nameof(Roles));
+            modelBuilder.Entity<Role>().ToTable(nameof(Role));
         }
     }
 }

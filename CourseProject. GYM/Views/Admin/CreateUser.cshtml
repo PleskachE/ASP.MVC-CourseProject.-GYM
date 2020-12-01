@@ -1,0 +1,59 @@
+﻿@using CourseProject.GYM.Models
+
+@model UserAndRolesModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <h2>Новый пользователь</h2>
+    @using (Html.BeginForm())
+    {
+        <p>
+            @Html.HiddenFor(m => m.User.Id)
+        </p>
+        <p>
+            @Html.HiddenFor(m => m.User.Birthdate)
+        </p>
+        @Html.LabelFor(m => m.User.FirstName, "Имя")
+        <br />
+        @Html.EditorFor(model => model.User.FirstName)
+        <br /><br />
+        @Html.LabelFor(m => m.User.LastName, "Фамилия")
+        <br />
+        @Html.EditorFor(m => m.User.LastName)
+        <br /><br />
+        @Html.LabelFor(m => m.User.Login, "Логин")
+        <br />
+        @Html.EditorFor(m => m.User.Login)
+        <br /><br />
+        @Html.LabelFor(m => m.User.Password, "Пароль")
+        <br />
+        @Html.EditorFor(m => m.User.Password)
+        <br /><br />
+        <br /><br />
+        @Html.LabelFor(m => m.User.RoleId, "Роль")
+        <br />
+        @Html.DropDownListFor(m => m.User.RoleId, Model.RoleService as SelectList)
+        <br /><br />
+        @Html.LabelFor(m => m.User.ContactPhoneNumber, "Телефон")
+        <br />
+        @Html.EditorFor(m => m.User.ContactPhoneNumber)
+        <br /><br />
+        @Html.LabelFor(m => m.User.Emeil, "Емейл")
+        <br />
+        @Html.EditorFor(m => m.User.Emeil)
+        <br /><br />
+        <input type="submit" value="Добавить" />
+    }
+</body>
+</html>

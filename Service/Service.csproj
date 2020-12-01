@@ -43,13 +43,13 @@
   <ItemGroup>
     <Compile Include="UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RolesService.cs" />
-    <Compile Include="TrainingGymService.cs" />
+    <Compile Include="RoleService.cs" />
+    <Compile Include="HallService.cs" />
     <Compile Include="TrainingService.cs" />
-    <Compile Include="TrainingSessionsService.cs" />
-    <Compile Include="TrainingSpecializationService.cs" />
-    <Compile Include="TypeGymTrainingService.cs" />
-    <Compile Include="WorkSpecializationsService.cs" />
+    <Compile Include="SessionService.cs" />
+    <Compile Include="SpecializationService.cs" />
+    <Compile Include="HallSpecializationService.cs" />
+    <Compile Include="WorkSpecializationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base.Abstractions\Base.Abstractions.csproj">

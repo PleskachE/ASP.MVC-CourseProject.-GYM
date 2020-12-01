@@ -42,13 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IUserService.cs" />
-    <Compile Include="IRolesService.cs" />
-    <Compile Include="ITrainingGymService.cs" />
+    <Compile Include="IRoleService.cs" />
+    <Compile Include="IHallService.cs" />
     <Compile Include="ITrainingService.cs" />
-    <Compile Include="ITrainingSessionsService.cs" />
-    <Compile Include="ITrainingSpecializationService.cs" />
-    <Compile Include="ITypeGymTrainingService.cs" />
-    <Compile Include="IWorkSpecializationsService.cs" />
+    <Compile Include="ISessionService.cs" />
+    <Compile Include="ISpecializationService.cs" />
+    <Compile Include="IHallSpecializationService.cs" />
+    <Compile Include="IWorkSpecializationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

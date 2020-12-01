@@ -1,0 +1,43 @@
+﻿@using CourseProject.GYM.Models
+
+@model List<ScheduleModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Тренировка:</th>
+                <th scope="col">Зал:</th>
+                <th scope="col">Начало:</th>
+                <th scope="col">Конец:</th>
+                <th scope="col">Ссылка:</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.TrainingName</td>
+                <td>@item.NameHall</td>
+                <td>@item.StartTime</td>
+                <td>@item.EndTime</td>
+                <td><a href="/Тrainer/Users/@item.Id">Посмотреть участников</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+

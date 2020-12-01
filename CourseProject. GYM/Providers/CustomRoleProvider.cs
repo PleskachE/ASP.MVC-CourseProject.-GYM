@@ -41,7 +41,7 @@ namespace CourseProject.GYM.Providers
             var user = UsersAndRolesRepository.UserService.GetUsers().FirstOrDefault(x => x.Login == username);
             if(user != null)
             {
-                roles.Append(UsersAndRolesRepository.RolesService.GetById(user.RolesId).Name);
+                roles.Append(UsersAndRolesRepository.RoleService.GetById(user.RoleId).Name);
             }
             return roles;
         }
@@ -58,7 +58,7 @@ namespace CourseProject.GYM.Providers
             var user = UsersAndRolesRepository.UserService.GetUsers().FirstOrDefault(x => x.Login == username);
             if (user != null)
             {
-                var role = UsersAndRolesRepository.RolesService.GetById(user.RolesId);
+                var role = UsersAndRolesRepository.RoleService.GetById(user.RoleId);
                 if(role != null)
                 {
                     outputResult = true;

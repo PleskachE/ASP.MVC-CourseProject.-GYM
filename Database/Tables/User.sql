@@ -8,6 +8,6 @@
 	[Emeil] NVARCHAR(50),
 	[Login] NVARCHAR(50),
 	[Password] NVARCHAR(50),
-	[RolesId] INT,
+	[RoleId] INT,
 	CONSTRAINT PK_User PRIMARY KEY ([Id])
 )

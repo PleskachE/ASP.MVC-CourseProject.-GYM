@@ -51,32 +51,32 @@ namespace CourseProject.GYM.App_Start
                     .To<UserService>()
                     .InRequestScope();
 
-                Bind<IRolesService>()
-                    .To<RolesService>()
+                Bind<IRoleService>()
+                    .To<RoleService>()
                     .InRequestScope();
 
-                Bind<ITrainingGymService>()
-                    .To<TrainingGymService>()
+                Bind<IHallService>()
+                    .To<HallService>()
                     .InRequestScope();
 
                 Bind<ITrainingService>()
                     .To<TrainingService>()
                     .InRequestScope();
 
-                Bind<ITrainingSessionsService>()
-                    .To<TrainingSessionsService>()
+                Bind<ISessionService>()
+                    .To<SessionService>()
                     .InRequestScope();
 
-                Bind<ITrainingSpecializationService>()
-                    .To<TrainingSpecializationService>()
+                Bind<ISpecializationService>()
+                    .To<SpecializationService>()
                     .InRequestScope();
 
-                Bind<ITypeGymTrainingService>()
-                    .To<TypeGymTrainingService>()
+                Bind<IHallSpecializationService>()
+                    .To<HallSpecializationService>()
                     .InRequestScope();
 
-                Bind<IWorkSpecializationsService>()
-                    .To<WorkSpecializationsService>()
+                Bind<IWorkSpecializationService>()
+                    .To<WorkSpecializationService>()
                     .InRequestScope();
             }
         }
