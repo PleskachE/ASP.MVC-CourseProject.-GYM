@@ -1,0 +1,20 @@
+﻿@using CourseProject.GYM.Models
+
+@helper HtmlList(List<ScheduleModel> model)
+{
+    foreach (var item in model)
+    {
+        <tr>
+            <td>@item.TrainingName</td>
+            <td>@item.NameHall</td>
+            <td>@item.NameCoach</td>
+            <td>@item.StartTime</td>
+            <td>@item.EndTime</td>
+            <td>@item.EmptySpace</td>
+            @if (item.EmptySpace != 0)
+            {
+                <td><a href="/Client/SignUpTrainingSession/@item.Id">Записаться</a></td>
+            }
+        </tr>
+    }
+}

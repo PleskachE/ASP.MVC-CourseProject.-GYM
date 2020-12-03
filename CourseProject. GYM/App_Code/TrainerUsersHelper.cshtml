@@ -1,0 +1,14 @@
+﻿@using CourseProject.GYM.Models
+
+@helper HtmlList(List<UserModel> model)
+{
+    foreach (var item in model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Emeil</td>
+            <td>@item.ContactPhoneNumber</td>
+        </tr>
+    }
+}

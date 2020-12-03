@@ -1,0 +1,18 @@
+﻿@using CourseProject.GYM.Models
+
+@helper HtmlList(RedactorUsersModel model)
+{
+    foreach (var item in model.Users)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Birthdate</td>
+            <td>@model.Roles.ToList().Find(x => x.Id == item.RoleId).Name</td>
+            <td>@item.Emeil</td>
+            <td>@item.ContactPhoneNumber</td>
+            <td><a href="/Admin/UpdateUser/@item.Id">Редактировать</a></td>
+            <td><a href="/Admin/DeleteUser/@item.Id">Удалить</a></td>
+        </tr>
+    }
+}

@@ -26,16 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.TrainingName</td>
-                    <td>@item.NameHall</td>
-                    <td>@item.NameCoach</td>
-                    <td>@item.StartTime</td>
-                    <td>@item.EndTime</td>
-                </tr>
-            }
+            @ClientMySheduleHelper.HtmlList(Model);
         </tbody>
     </table>
 </body>

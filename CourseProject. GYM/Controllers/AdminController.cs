@@ -73,9 +73,10 @@ namespace CourseProject.GYM.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateUser(UserAndRolesModel user)
+        public ActionResult UpdateUser(User user)
         {
-            _userService.Update(user.User);
+            
+            _userService.Update(user);
             return Redirect("/Account/Index");
         }
 
@@ -92,20 +93,9 @@ namespace CourseProject.GYM.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateUser(UserAndRolesModel user)
+        public ActionResult CreateUser(User user)
         {
-            var newUser = new User()
-            {
-                FirstName = user.User.FirstName,
-                LastName = user.User.LastName,
-                Birthdate = DateTime.Now,
-                Emeil = user.User.Emeil,
-                ContactPhoneNumber = user.User.ContactPhoneNumber,
-                Login = user.User.Login,
-                Password = user.User.Password,
-                RoleId = user.User.RoleId
-            };
-            _userService.Add(user.User);
+            _userService.Add(user);
             return Redirect("/Account/Index");
         }
     }

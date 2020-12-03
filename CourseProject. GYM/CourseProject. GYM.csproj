@@ -172,6 +172,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="App_Code\AdminRedactorUserListHelper.cshtml" />
+    <Content Include="App_Code\ClientMySheduleHelper.cshtml" />
+    <Content Include="App_Code\HomeResultHelper.cshtml" />
+    <Content Include="App_Code\TrainerMyWorkHelper.cshtml" />
+    <Content Include="App_Code\TrainerUsersHelper.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -209,7 +214,6 @@
     <Content Include="Views\Тrainer\Users.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
   </ItemGroup>

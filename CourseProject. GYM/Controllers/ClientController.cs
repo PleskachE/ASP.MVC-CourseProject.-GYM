@@ -1,6 +1,8 @@
 ﻿using CourseProject.GYM.Models;
+
 using Data.Entity;
 using Service.Abstraction;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,37 +62,15 @@ namespace CourseProject.GYM.Controllers
         [Authorize]
         public ActionResult Update()
         {
-            var user = _userService.GetById(AuthorizedUser.Id);
-            var model = new UserModel()
-            {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Birthdate = user.Birthdate,
-                ContactPhoneNumber = user.ContactPhoneNumber,
-                Emeil = user.Emeil,
-                Login = user.Login,
-                Password = user.Password
-            };
+            var model = _userService.GetById(AuthorizedUser.Id);      
             return View(model);
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult Update(UserModel user)
+        public ActionResult Update(User user)
         {
-            var userResult = new User()
-            {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Birthdate = user.Birthdate,
-                ContactPhoneNumber = user.ContactPhoneNumber,
-                Emeil = user.Emeil,
-                Login = user.Login,
-                Password = user.Password,
-                Id = _userService.GetUsers().ToList().Find(x => x.Login == user.Login).Id,
-                RoleId = _userService.GetUsers().ToList().Find(x => x.Login == user.Login).RoleId
-            };
-            _userService.Update(userResult);
+            _userService.Update(user);
             return Redirect("/Home/Index");
         }
 
@@ -102,6 +82,7 @@ namespace CourseProject.GYM.Controllers
             var model = new List<ScheduleModel>();
             var listSession = _sessionService.GetSessions().ToList().FindAll(x => x.UserId == AuthorizedUser.Id);
             var listTraining = new List<Training>();
+
             if (listSession != null)
             {
                for(var i = 0; i < listSession.Count; i++)
@@ -109,6 +90,7 @@ namespace CourseProject.GYM.Controllers
                     listTraining.Add(_trainingService.GetById(listSession[i].TrainingId));
                }
             }
+
             foreach(var item in listTraining)
             {
                 model.Add(new ScheduleModel()

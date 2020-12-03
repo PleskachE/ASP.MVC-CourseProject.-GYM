@@ -1,6 +1,6 @@
-﻿@using CourseProject.GYM.Models
+﻿@using Data.Entity
 
-@model UserModel
+@model User
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -24,6 +24,9 @@
             @Html.HiddenFor(m => m.RoleId)
         </p>
         <p>
+            @Html.HiddenFor(m => m.Id)
+        </p>
+        <p>
             @Html.HiddenFor(m => m.Birthdate)
         </p>
         <p>
@@ -35,13 +38,11 @@
             @Html.LabelFor(m => m.LastName, "Фамилия")
             <br />
             @Html.EditorFor(m => m.LastName)
-
         </p>
         <p>
             @Html.LabelFor(m => m.ContactPhoneNumber, "Номер телефона")
             <br />
             @Html.EditorFor(m => m.ContactPhoneNumber)
-
         </p>
         <p>
             @Html.LabelFor(m => m.Emeil, "Email")

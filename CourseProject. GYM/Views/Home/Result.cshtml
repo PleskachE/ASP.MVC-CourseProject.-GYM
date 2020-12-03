@@ -28,21 +28,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-            <tr>
-                <td>@item.TrainingName</td>
-                <td>@item.NameHall</td>
-                <td>@item.NameCoach</td>
-                <td>@item.StartTime</td>
-                <td>@item.EndTime</td>
-                <td>@item.EmptySpace</td>
-                @if (item.EmptySpace != 0)
-                {
-                <td><a href="/Client/SignUpTrainingSession/@item.Id">Записаться</a></td>
-                }
-            </tr>
-            }
+            @HomeResultHelper.HtmlList(Model);
         </tbody>
     </table>
 
