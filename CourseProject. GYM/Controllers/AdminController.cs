@@ -39,7 +39,7 @@ namespace CourseProject.GYM.Controllers
         [Authorize]
         public ActionResult RedactorUsers()
         {
-            var model = new RedactorUsersModel(_userService, _roleService);
+            var model = new RedactorUsersModel(_userService.GetUsers(), _roleService.GetRoles());
             return View(model);
         }
 
@@ -64,9 +64,11 @@ namespace CourseProject.GYM.Controllers
             {
                 return HttpNotFound();
             }
-            var model = new UserAndRolesModel();
-            model.User = _userService.GetById(id.Value);
-            model.RoleService = new SelectList(_roleService.GetRoles(), "Id", "Name");
+            var model = new UserAndRolesModel()
+            {
+                User = _userService.GetById(id.Value),
+                RoleSelects = new SelectList(_roleService.GetRoles(), "Id", "Name")
+            };
             return View(model);
         }
 
@@ -81,9 +83,11 @@ namespace CourseProject.GYM.Controllers
         [Authorize]
         public ActionResult CreateUser()
         {
-            var model = new UserAndRolesModel();
-            model.User = null;
-            model.RoleService = new SelectList(_roleService.GetRoles(), "Id", "Name");
+            var model = new UserAndRolesModel()
+            {
+                User = null,
+                RoleSelects = new SelectList(_roleService.GetRoles(), "Id", "Name")
+            };
             return View(model);
         }
 

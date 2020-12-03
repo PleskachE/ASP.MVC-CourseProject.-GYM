@@ -18,19 +18,17 @@
     <h2>Новый пользователь</h2>
     @using (Html.BeginForm())
     {
-        <p>
-            @Html.HiddenFor(m => m.User.Id)
-        </p>
-        <p>
-            @Html.HiddenFor(m => m.User.Birthdate)
-        </p>
         @Html.LabelFor(m => m.User.FirstName, "Имя")
         <br />
-        @Html.EditorFor(model => model.User.FirstName)
+        @Html.EditorFor(m => m.User.FirstName)
         <br /><br />
         @Html.LabelFor(m => m.User.LastName, "Фамилия")
         <br />
         @Html.EditorFor(m => m.User.LastName)
+        <br /><br />
+        @Html.LabelFor(m => m.User.Birthdate, "Дата рождения")
+        <br />
+        @Html.EditorFor(m => m.User.Birthdate)
         <br /><br />
         @Html.LabelFor(m => m.User.Login, "Логин")
         <br />
@@ -40,10 +38,9 @@
         <br />
         @Html.EditorFor(m => m.User.Password)
         <br /><br />
-        <br /><br />
         @Html.LabelFor(m => m.User.RoleId, "Роль")
         <br />
-        @Html.DropDownListFor(m => m.User.RoleId, Model.RoleService as SelectList)
+        @Html.DropDownListFor(m => m.User.RoleId, Model.RoleSelects as SelectList)
         <br /><br />
         @Html.LabelFor(m => m.User.ContactPhoneNumber, "Телефон")
         <br />

@@ -29,13 +29,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.UserService.GetUsers())
+            @foreach (var item in Model.Users)
             {
             <tr>
                 <td>@item.FirstName</td>
                 <td>@item.LastName</td>
                 <td>@item.Birthdate</td>
-                <td>@Model.RoleService.GetById(item.RoleId).Name</td>
+                <td>@Model.Roles.ToList().Find(x => x.Id == item.RoleId).Name</td>
                 <td>@item.Emeil</td>
                 <td>@item.ContactPhoneNumber</td>
                 <td><a href="/Admin/UpdateUser/@item.Id">Редактировать</a></td>

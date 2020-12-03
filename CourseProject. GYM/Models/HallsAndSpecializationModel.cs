@@ -1,16 +1,18 @@
-﻿using Service.Abstraction;
+﻿using Data.Entity;
+
+using System.Collections.Generic;
 
 namespace CourseProject.GYM.Models
 {
     public class HallsAndSpecializationModel
     {
-        public ISpecializationService SpecializationService { get; set; }
-        public IHallService HallService { get; set; }
+        public IEnumerable<Specialization> Specializations { get; set; }
+        public IEnumerable<Hall> Halls { get; set; }
         
-        public HallsAndSpecializationModel(ISpecializationService specializationService, IHallService hallService)
+        public HallsAndSpecializationModel(IEnumerable<Specialization> specializations, IEnumerable<Hall> halls)
         {
-            this.HallService = hallService;
-            this.SpecializationService = specializationService;
+            this.Halls = halls;
+            this.Specializations = specializations;
         }
 
     }

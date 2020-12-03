@@ -29,8 +29,8 @@ namespace CourseProject.GYM.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            HallsAndSpecializationModel model = new HallsAndSpecializationModel(_specializationService,
-                _hallService);
+            HallsAndSpecializationModel model = new HallsAndSpecializationModel(_specializationService.GetSpecializations(),
+                _hallService.GetHalls());
             return View(model);
         }
 

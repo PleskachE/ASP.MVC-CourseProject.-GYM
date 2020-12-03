@@ -103,6 +103,7 @@ namespace CourseProject.GYM.Controllers
                     _userService.Add(newUser);
 
                     user = _userService.GetUsers().FirstOrDefault(x => x.Login == model.Login);
+
                     if (user != null)
                     {
                         AuthorizedUser.Id = user.Id;

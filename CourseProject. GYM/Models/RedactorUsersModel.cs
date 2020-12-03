@@ -1,16 +1,18 @@
-﻿using Service.Abstraction;
+﻿using Data.Entity;
+
+using System.Collections.Generic;
 
 namespace CourseProject.GYM.Models
 {
     public class RedactorUsersModel
     {
-        public IUserService UserService { get; set; }
-        public IRoleService RoleService { get; set; }
+        public IEnumerable<User> Users { get; set; }
+        public IEnumerable<Role> Roles { get; set; }
 
-        public RedactorUsersModel(IUserService userService, IRoleService roleService)
+        public RedactorUsersModel(IEnumerable<User> users, IEnumerable<Role> roles)
         {
-            this.UserService = userService;
-            this.RoleService = roleService;
+            this.Users = users;
+            this.Roles = roles;
         }
     }
 }

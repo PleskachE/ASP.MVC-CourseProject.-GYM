@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="row">
-        @foreach (var item in Model.SpecializationService.GetSpecializations())
+        @foreach (var item in Model.Specializations)
         {
             <div class="col-sm-6">
                 <div class="card">
@@ -32,7 +32,7 @@
     <hr />
     <p>Доступные для занятий залы:</p>
     <div class="row">
-        @foreach (var item in Model.HallService.GetHalls())
+        @foreach (var item in Model.Halls)
         {
             <div class="col-sm-6">
                 <div class="card">

@@ -7,6 +7,6 @@ namespace CourseProject.GYM.Models
     public class UserAndRolesModel
     {
         public User User { get; set; }
-        public SelectList RoleService { get; set; }
+        public SelectList RoleSelects { get; set; }
     }
 }
