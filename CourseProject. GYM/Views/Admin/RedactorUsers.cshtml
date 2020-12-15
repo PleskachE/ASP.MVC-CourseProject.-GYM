@@ -1,4 +1,5 @@
 ﻿@using CourseProject.GYM.Models
+@using CourseProject.GYM.Helpers
 
 @model RedactorUsersModel
 @{
@@ -32,6 +33,10 @@
             @AdminRedactorUserListHelper.HtmlList(Model);
         </tbody>
     </table>
+    <br />
+    <div class="btn-group">
+        @Html.PageLinks(Model.PageInfo, x => Url.Action("RedactorUsers", new { page = x }))
+    </div>
 </body>
 </html>
 

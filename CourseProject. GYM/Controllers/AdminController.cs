@@ -21,8 +21,12 @@ namespace CourseProject.GYM.Controllers
         private IWorkSpecializationService _workSpecializationService { get; set; }
         private IRoleService _roleService { get; set; }
 
-        public AdminController(ITrainingService trainingService, ISessionService sessionService, IUserService userService, 
-            IHallService hallService, ISpecializationService specializationService, IWorkSpecializationService workSpecializationService,
+        public AdminController(ITrainingService trainingService,
+            ISessionService sessionService,
+            IUserService userService, 
+            IHallService hallService,
+            ISpecializationService specializationService,
+            IWorkSpecializationService workSpecializationService,
             IRoleService roleService)
         {
             this._trainingService = trainingService;
@@ -37,9 +41,14 @@ namespace CourseProject.GYM.Controllers
         [OutputCache(Duration = 30, Location = OutputCacheLocation.Server)]
         [HttpGet]
         [Authorize]
-        public ActionResult RedactorUsers()
+        public ActionResult RedactorUsers(int page = 1)
         {
-            var model = new RedactorUsersModel(_userService.GetUsers(), _roleService.GetRoles());
+            int pageSize = 5;
+            var tempUsers = _userService.GetUsers();
+            IEnumerable<User> users = tempUsers.Skip((page - 1) * pageSize).Take(pageSize); 
+            PageInfo pageInfo = new PageInfo { PageNumber = page, PageSize = pageSize, TotalItems = tempUsers.Count() };
+            var model = new RedactorUsersModel(users, _roleService.GetRoles());
+            model.PageInfo = pageInfo;
             return View(model);
         }
 
@@ -75,7 +84,6 @@ namespace CourseProject.GYM.Controllers
         [HttpPost]
         public ActionResult UpdateUser(User user)
         {
-            
             _userService.Update(user);
             return Redirect("/Account/Index");
         }

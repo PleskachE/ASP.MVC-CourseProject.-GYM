@@ -8,6 +8,7 @@ namespace CourseProject.GYM.Models
     {
         public IEnumerable<User> Users { get; set; }
         public IEnumerable<Role> Roles { get; set; }
+        public PageInfo PageInfo { get; set; }
 
         public RedactorUsersModel(IEnumerable<User> users, IEnumerable<Role> roles)
         {
